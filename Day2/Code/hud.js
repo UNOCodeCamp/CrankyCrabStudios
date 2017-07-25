@@ -3,7 +3,7 @@ hud = new Object();
 
 hud.draw = function()
 {
-
+	hud.drawText("Points: "+game.score, 32, 32,"left", 24)
 };
 
 hud.drawText = function(text, x, y, align, size)

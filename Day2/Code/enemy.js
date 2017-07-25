@@ -3,12 +3,13 @@ var enemy = new Enemy();
 
 function Enemy()
 {
-	this.x = 0;
-	this.y = 0;
+	this.x = Math.random() * (viewport.width-32);
+	this.y = Math.random() * (viewport.height-32);
 	this.image = new Image();
-	this.image.src = ""
+	this.image.src = "assets/ghost.png"
 	this.width = 32;
 	this.height = 32;
+	this.age = Date.now()
 
 	this.draw = function()
 	{
@@ -30,7 +31,9 @@ function Enemy()
 
 	this.move = function() 
 	{
-
+		this.age = Date.now()
+		this.x = Math.random() * (viewport.width - this.width)
+		this.y = Math.random() * (viewport.height - this.height)
 	}
 
 }
